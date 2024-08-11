@@ -7,12 +7,9 @@ namespace ContosoPizza.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PizzaController : ControllerBase
+public class PizzaController(ILogger<PizzaController> logger) : ControllerBase
 {
-    public PizzaController()
-    {
-
-    }
+    private readonly ILogger<PizzaController> _logger = logger;
 
     // GET all action 
     [HttpGet]
